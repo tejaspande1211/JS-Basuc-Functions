@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS Algorithm Practice</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>JavaScript Coding Tools</h1>
+
+    <!-- Reverse String -->
+    <div class="block">
+        <h2>Reverse String</h2>
+        <input type="text" id="inputString" placeholder="Enter a string" />
+        <button onclick="reverseAndDisplay()">Reverse</button>
+        <div id="output" class="output"></div>
+    </div>
+
+    <!-- Longest Word -->
+    <div class="block">
+        <h2>Find Longest Word</h2>
+        <input type="text" id="longestWordInput" placeholder="Enter a sentence" />
+        <button onclick="findLongestWord()">Find</button>
+        <div id="outputLongestWord" class="output"></div>
+    </div>
+
+    <!-- Palindrome Check -->
+    <div class="block">
+        <h2>Check Palindrome</h2>
+        <input type="text" id="palindromeInput" placeholder="Enter a string" />
+        <button onclick="checkPalindrome()">Check</button>
+        <div id="outputPalindrome" class="output"></div>
+    </div>
+
+    <!-- Count Vowels -->
+    <div class="block">
+        <h2>Count Vowels</h2>
+        <input type="text" id="vowelInput" placeholder="Enter a string" />
+        <button onclick="countVowels()">Count</button>
+        <div id="outputVowels" class="output"></div>
+    </div>
+
+    <!-- Remove Spaces -->
+    <div class="block">
+        <h2>Remove Spaces from String</h2>
+        <input type="text" id="spacesInput" placeholder="Enter a string" />
+        <button onclick="removeSpaces()">Remove</button>
+        <div id="outputSpaces" class="output"></div>
+    </div>
+
+    <!-- Replace All Occurrences -->
+    <div class="block">
+        <h2>Replace All Occurrences</h2>
+        <input type="text" id="replaceInput" placeholder="Enter string" />
+        <input type="text" id="replaceChar" placeholder="Character to replace" maxlength="1" />
+        <input type="text" id="replaceWith" placeholder="Replace with" maxlength="1" />
+        <button onclick="replaceAllOccurrences()">Replace</button>
+        <div id="outputReplace" class="output"></div>
+    </div>
+
+    <!-- Character Frequency -->
+    <div class="block">
+        <h2>Character Frequency</h2>
+        <input type="text" id="freqInput" placeholder="Enter a string" />
+        <button onclick="charFrequency()">Get Frequency</button>
+        <div id="outputFrequency" class="output"></div>
+    </div>
+
+    <!-- Largest Number in Array -->
+    <div class="block">
+        <h2>Find Largest Number in Array</h2>
+        <input type="text" id="arrayInputLargest" placeholder="e.g. 12,5,30,20,8" />
+        <button onclick="Largest()">Largest</button>
+        <div id="outputLargest" class="output"></div>
+    </div>
+
+    <!-- Smallest Number in Array -->
+    <div class="block">
+        <h2>Find Smallest Number in Array</h2>
+        <input type="text" id="arrayInputSmallest" placeholder="e.g. 12,5,30,20,8" />
+        <button onclick="Smallest()">Smallest</button>
+        <div id="outputSmallest" class="output"></div>
+    </div>
+
+    <!-- Sum of Array Elements -->
+    <div class="block">
+        <h2>Sum of Array Elements</h2>
+        <input type="text" id="sumArrayInput" placeholder="e.g. 12,5,30,20,8" />
+        <button onclick="sumArray()">Sum</button>
+        <div id="outputSum" class="output"></div>
+    </div>
+
+    <!-- Sort Array -->
+    <div class="block">
+        <h2>Sort Array</h2>
+        <input type="text" id="sortArrayInput" placeholder="e.g. 12,5,30,20,8" />
+        <button onclick="sortArrayAsc()">Ascending</button>
+        <button onclick="sortArrayDesc()">Descending</button>
+        <div id="outputSort" class="output"></div>
+    </div>
+
+    <!-- Remove Duplicates -->
+    <div class="block">
+        <h2>Remove Duplicates from Array</h2>
+        <input type="text" id="dupArrayInput" placeholder="e.g. 12,12,5,30,5,20" />
+        <button onclick="removeDuplicates()">Remove Duplicates</button>
+        <div id="outputDup" class="output"></div>
+    </div>
+
+    <!-- Second Largest/Smallest -->
+    <div class="block">
+        <h2>Second Largest/Smallest Number</h2>
+        <input type="text" id="secArrayInput" placeholder="e.g. 12,5,30,20,8" />
+        <button onclick="findSecondLargest()">2nd Largest</button>
+        <button onclick="findSecondSmallest()">2nd Smallest</button>
+        <div id="outputSecond" class="output"></div>
+    </div>
+
+    <!-- Merge Two Sorted Arrays -->
+    <div class="block">
+        <h2>Merge Two Sorted Arrays</h2>
+        <input type="text" id="mergeArr1" placeholder="Array 1: e.g. 1,3,5" />
+        <input type="text" id="mergeArr2" placeholder="Array 2: e.g. 2,4,6" />
+        <button onclick="mergeArrays()">Merge</button>
+        <div id="outputMerge" class="output"></div>
+    </div>
+
+    <!-- Index of Element -->
+    <div class="block">
+        <h2>Index of Element in Array</h2>
+        <input type="text" id="indexArrayInput" placeholder="e.g. 12,5,30,20,8" />
+        <input type="number" id="indexElementInput" placeholder="Element to search" />
+        <button onclick="findIndex()">Get Index</button>
+        <div id="outputIndex" class="output"></div>
+    </div>
+
+    <!-- Reverse Array -->
+    <div class="block">
+        <h2>Reverse Array</h2>
+        <input type="text" id="reverseArrayInput" placeholder="e.g. 12,5,30,20,8" />
+        <button onclick="reverseArray()">Reverse</button>
+        <div id="outputReverseArray" class="output"></div>
+    </div>
+
+    <!-- Average of Array -->
+    <div class="block">
+        <h2>Average of Array Elements</h2>
+        <input type="text" id="avgArrayInput" placeholder="e.g. 12,5,30,20,8" />
+        <button onclick="findAverage()">Average</button>
+        <div id="outputAvgArray" class="output"></div>
+    </div>
+
+    <!-- Missing Numbers in Sequence -->
+    <div class="block">
+        <h2>Find Missing Numbers in Sequence</h2>
+        <input type="text" id="missingArrayInput" placeholder="e.g. 1,2,4,6" />
+        <button onclick="findMissingNumbers()">Find Missing</button>
+        <div id="outputMissing" class="output"></div>
+    </div>
+
+    <!-- Even or Odd -->
+    <div class="block">
+        <h2>Check Even or Odd</h2>
+        <input type="number" id="evenOddInput" placeholder="Enter a number" />
+        <button onclick="checkEvenOdd()">Check</button>
+        <div id="outputEvenOdd" class="output"></div>
+    </div>
+
+    <!-- Find Factorial -->
+    <div class="block">
+        <h2>Find Factorial</h2>
+        <input type="number" id="factorialInput" placeholder="Enter a number" />
+        <button onclick="findFactorial()">Factorial</button>
+        <div id="outputFactorial" class="output"></div>
+    </div>
+
+    <!-- Print Fibonacci Sequence -->
+    <div class="block">
+        <h2>Print Fibonacci Sequence</h2>
+        <input type="number" id="fiboInput" placeholder="n terms" />
+        <button onclick="printFibo()">Print</button>
+        <div id="outputFibo" class="output"></div>
+    </div>
+
+    <!-- Sum of Digits -->
+    <div class="block">
+        <h2>Sum of Digits</h2>
+        <input type="number" id="sumDigitsInput" placeholder="Enter a number" />
+        <button onclick="sumDigits()">Sum Digits</button>
+        <div id="outputSumDigits" class="output"></div>
+    </div>
+
+    <!-- Reverse an Integer -->
+    <div class="block">
+        <h2>Reverse an Integer</h2>
+        <input type="number" id="revIntInput" placeholder="Enter integer" />
+        <button onclick="reverseInteger()">Reverse</button>
+        <div id="outputRevInt" class="output"></div>
+    </div>
+
+    <!-- Check Prime -->
+    <div class="block">
+        <h2>Check Prime</h2>
+        <input type="number" id="primeInput" placeholder="Enter a number" />
+        <button onclick="checkPrime()">Check Prime</button>
+        <div id="outputPrime" class="output"></div>
+    </div>
+
+    <!-- Prime Numbers in Range -->
+    <div class="block">
+        <h2>Prime Numbers in Range</h2>
+        <input type="number" id="rangePrimeStart" placeholder="Start" />
+        <input type="number" id="rangePrimeEnd" placeholder="End" />
+        <button onclick="primesInRange()">Find Primes</button>
+        <div id="outputRangePrimes" class="output"></div>
+    </div>
+
+    <!-- Swap Two Numbers -->
+    <div class="block">
+        <h2>Swap Two Numbers</h2>
+        <input type="number" id="swapA" placeholder="A" />
+        <input type="number" id="swapB" placeholder="B" />
+        <button onclick="swapNumbers()">Swap</button>
+        <div id="outputSwap" class="output"></div>
+    </div>
+
+    <!-- Multiplication Table -->
+    <div class="block">
+        <h2>Multiplication Table</h2>
+        <input type="number" id="multTableNum" placeholder="Number" />
+        <button onclick="multiplicationTable()">Show Table</button>
+        <div id="outputMultTable" class="output"></div>
+    </div>
+
+    <!-- Count Digit Occurrences -->
+    <div class="block">
+        <h2>Count Digit Occurrences</h2>
+        <input type="number" id="countDigitNum" placeholder="Number" />
+        <input type="number" id="digitToCount" placeholder="Digit to count" />
+        <button onclick="countDigitOccurrences()">Count</button>
+        <div id="outputCountDigit" class="output"></div>
+    </div>
+
+    <!-- Print 1 to 100 -->
+    <div class="block">
+        <h2>Print 1 to 100</h2>
+        <button onclick="print1to100()">Print</button>
+        <div id="output1to100" class="output"></div>
+    </div>
+
+    <!-- Odd/Even Numbers 1 to 100 -->
+    <div class="block">
+        <h2>Odd/Even Numbers 1 to 100</h2>
+        <button onclick="printOdds()">Odd Numbers</button>
+        <button onclick="printEvens()">Even Numbers</button>
+        <div id="outputOddsEvens" class="output"></div>
+    </div>
+
+    <!-- First n Multiples of Number -->
+    <div class="block">
+        <h2>First n Multiples of Number</h2>
+        <input type="number" id="multN_Num" placeholder="Number" />
+        <input type="number" id="multN_Count" placeholder="Multiples count" />
+        <button onclick="multiplesOfNumber()">Show Multiples</button>
+        <div id="outputMultiples" class="output"></div>
+    </div>
+
+    <!-- Power: base^exponent -->
+    <div class="block">
+        <h2>Power: base^exponent</h2>
+        <input type="number" id="powerBase" placeholder="Base" />
+        <input type="number" id="powerExp" placeholder="Exponent" />
+        <button onclick="findPower()">Compute</button>
+        <div id="outputPower" class="output"></div>
+    </div>
+
+    <!-- GCD & LCM -->
+    <div class="block">
+        <h2>GCD & LCM</h2>
+        <input type="number" id="gcdA" placeholder="Number 1" />
+        <input type="number" id="gcdB" placeholder="Number 2" />
+        <button onclick="findGCDLCM()">Compute</button>
+        <div id="outputGCDLCM" class="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
