@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <!-- Sidebar Toggle (Three Dots button) -->
+    <button id="sidebarToggle" class="sidebar-toggle">
+    &#x22EE;
+    </button>
+    <div class="sidebar" id="sidebar">
+    <h2>Practice Hub</h2>
+    <ul>
+        <li><a href="index.html">JavaScript Algorithms</a></li>
+        <li><a href="java-basics.html">Java Basics</a></li>
+        <li><a href="java-oop.html">Java OOP</a></li>
+        <li><a href="js-logic.html">JS Logic</a></li>
+        <li><a href="spring-boot.html">Spring Boot API</a></li>
+        <!-- Add more links as needed -->
+    </ul>
+</div>
     <h1>JavaScript Coding Tools</h1>
 
     <!-- Reverse String -->
@@ -285,5 +300,21 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        toggleBtn.addEventListener('click', () => {
+          sidebar.classList.toggle('active');
+        });
+
+        // Optional: Clicking outside hides the sidebar
+        document.addEventListener('click', function(event) {
+          if (sidebar.classList.contains('active') && !sidebar.contains(event.target) && event.target !== toggleBtn) {
+            sidebar.classList.remove('active');
+          }
+        });
+    </script>
+
 </body>
 </html>

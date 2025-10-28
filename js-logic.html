@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>JavaScript DSA Codes</title>
+ <link rel="stylesheet" href="styles.css" />
+ <style>
+ body {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+ }
+ h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #222;
+ }
+ h2 {
+  color: #005f73;
+  margin-top: 30px;
+  margin-bottom: 8px;
+ }
+ pre {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 8px;
+  padding: 15px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+ }
+ </style>
+</head>
+<body>
+ <h1>JavaScript Algorithm Function Codes</h1>
+
+ <section>
+ <h2>reverseAndDisplay()</h2>
+ <pre>
+function reverseAndDisplay() {
+ const str = document.getElementById('inputString').value;
+ document.getElementById('output').textContent = str.split('').reverse().join('');
+}
+ </pre>
+
+ <h2>findLongestWord()</h2>
+ <pre>
+function findLongestWord() {
+ const str = document.getElementById('longestWordInput').value;
+ const words = str.match(/\w+/g) || [];
+ let longest = "";
+ words.forEach(word => { if (word.length > longest.length) longest = word; });
+ document.getElementById('outputLongestWord').textContent = longest;
+}
+ </pre>
+
+ <h2>checkPalindrome()</h2>
+ <pre>
+function checkPalindrome() {
+ const str = document.getElementById('palindromeInput').value.replace(/[\W_]/g, '').toLowerCase();
+ document.getElementById('outputPalindrome').textContent = str === str.split('').reverse().join('') ? "Palindrome" : "Not palindrome";
+}
+ </pre>
+
+ <h2>countVowels()</h2>
+ <pre>
+function countVowels() {
+ const str = document.getElementById('vowelInput').value.toLowerCase();
+ const count = (str.match(/[aeiou]/g) || []).length;
+ document.getElementById('outputVowels').textContent = count;
+}
+ </pre>
+
+ <h2>removeSpaces()</h2>
+ <pre>
+function removeSpaces() {
+ const str = document.getElementById('spacesInput').value;
+ document.getElementById('outputSpaces').textContent = str.replace(/ /g, '');
+}
+ </pre>
+
+ <h2>replaceAllOccurrences()</h2>
+ <pre>
+function replaceAllOccurrences() {
+ const str = document.getElementById('replaceInput').value;
+ const ch = document.getElementById('replaceChar').value;
+ const rep = document.getElementById('replaceWith').value;
+ if (ch) document.getElementById('outputReplace').textContent = str.split(ch).join(rep);
+ else document.getElementById('outputReplace').textContent = "Enter character to replace";
+}
+ </pre>
+
+ <h2>charFrequency()</h2>
+ <pre>
+function charFrequency() {
+ const str = document.getElementById('freqInput').value;
+ let freq = {};
+ for (let char of str) freq[char] = (freq[char] || 0) + 1;
+ document.getElementById('outputFrequency').textContent = JSON.stringify(freq);
+}
+ </pre>
+
+ <h2>Largest()</h2>
+ <pre>
+function Largest() {
+ const arr = document.getElementById('arrayInputLargest').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ document.getElementById('outputLargest').textContent = arr.length ? Math.max(...arr) : "Invalid input";
+}
+ </pre>
+
+ <h2>Smallest()</h2>
+ <pre>
+function Smallest() {
+ const arr = document.getElementById('arrayInputSmallest').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ document.getElementById('outputSmallest').textContent = arr.length ? Math.min(...arr) : "Invalid input";
+}
+ </pre>
+
+ <h2>sumArray()</h2>
+ <pre>
+function sumArray() {
+ const arr = document.getElementById('sumArrayInput').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ document.getElementById('outputSum').textContent = arr.length ? arr.reduce((a, b) => a + b, 0) : "Invalid input";
+}
+ </pre>
+
+ <h2>sortArrayAsc()</h2>
+ <pre>
+function sortArrayAsc() {
+ const arr = document.getElementById('sortArrayInput').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ document.getElementById('outputSort').textContent = arr.length ? arr.slice().sort((a, b) => a - b).join(", ") : "Invalid input";
+}
+ </pre>
+
+ <h2>sortArrayDesc()</h2>
+ <pre>
+function sortArrayDesc() {
+ const arr = document.getElementById('sortArrayInput').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ document.getElementById('outputSort').textContent = arr.length ? arr.slice().sort((a, b) => b - a).join(", ") : "Invalid input";
+}
+ </pre>
+
+ <h2>removeDuplicates()</h2>
+ <pre>
+function removeDuplicates() {
+ const arr = document.getElementById('dupArrayInput').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ const uniqueArr = [...new Set(arr)];
+ document.getElementById('outputDup').textContent = uniqueArr.length ? uniqueArr.join(", ") : "Invalid input";
+}
+ </pre>
+
+ <h2>findSecondLargest()</h2>
+ <pre>
+function findSecondLargest() {
+ const arr = document.getElementById('secArrayInput').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ const uniqueArr = [...new Set(arr)].sort((a, b) => b - a);
+ document.getElementById('outputSecond').textContent = uniqueArr.length > 1 ? uniqueArr[1] : "Not enough unique elements";
+}
+ </pre>
+
+ <h2>findSecondSmallest()</h2>
+ <pre>
+function findSecondSmallest() {
+ const arr = document.getElementById('secArrayInput').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ const uniqueArr = [...new Set(arr)].sort((a, b) => a - b);
+ document.getElementById('outputSecond').textContent = uniqueArr.length > 1 ? uniqueArr[1] : "Not enough unique elements";
+}
+ </pre>
+
+ <h2>mergeArrays()</h2>
+ <pre>
+function mergeArrays() {
+ const arr1 = document.getElementById('mergeArr1').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ const arr2 = document.getElementById('mergeArr2').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ const merged = arr1.concat(arr2).sort((a, b) => a - b);
+ document.getElementById('outputMerge').textContent = merged.length ? merged.join(", ") : "Invalid input";
+}
+ </pre>
+
+ <h2>findIndex()</h2>
+ <pre>
+function findIndex() {
+ const arr = document.getElementById('indexArrayInput').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ const num = Number(document.getElementById('indexElementInput').value);
+ const idx = arr.indexOf(num);
+ document.getElementById('outputIndex').textContent = idx !== -1 ? idx : "Element not found";
+}
+ </pre>
+
+ <h2>reverseArray()</h2>
+ <pre>
+function reverseArray() {
+ const arr = document.getElementById('reverseArrayInput').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ document.getElementById('outputReverseArray').textContent = arr.length ? arr.reverse().join(", ") : "Invalid input";
+}
+ </pre>
+
+ <h2>findAverage()</h2>
+ <pre>
+function findAverage() {
+ const arr = document.getElementById('avgArrayInput').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n));
+ document.getElementById('outputAvgArray').textContent = arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(2) : "Invalid input";
+}
+ </pre>
+
+ <h2>findMissingNumbers()</h2>
+ <pre>
+function findMissingNumbers() {
+ const arr = document.getElementById('missingArrayInput').value.split(',').map(s => Number(s.trim())).filter(n => !isNaN(n)).sort((a,b)=>a-b);
+ if (arr.length < 2) { document.getElementById('outputMissing').textContent = "Invalid input"; return; }
+ let missing = [];
+ for (let i = arr[0]; i < arr[arr.length-1]; i++) {
+ if (!arr.includes(i)) missing.push(i);
+ }
+ document.getElementById('outputMissing').textContent = missing.length ? missing.join(", ") : "No missing numbers";
+}
+ </pre>
+
+ <h2>checkEvenOdd()</h2>
+ <pre>
+function checkEvenOdd() {
+ const num = Number(document.getElementById('evenOddInput').value);
+ document.getElementById('outputEvenOdd').textContent = num % 2 === 0 ? "Even" : "Odd";
+}
+ </pre>
+
+ <h2>findFactorial()</h2>
+ <pre>
+function findFactorial() {
+ let n = Number(document.getElementById('factorialInput').value);
+ if (n < 0) {
+ document.getElementById('outputFactorial').textContent = "Negative not allowed";
+ return;
+ }
+ let fact = 1;
+ for (let i = 2; i <= n; i++) fact *= i;
+ document.getElementById('outputFactorial').textContent = fact;
+}
+ </pre>
+
+ <h2>printFibo()</h2>
+ <pre>
+function printFibo() {
+ let n = Number(document.getElementById('fiboInput').value);
+ let res = [];
+ let a = 0, b = 1;
+ for (let i = 0; i < n; i++) {
+ res.push(a);
+ [a, b] = [b, a + b];
+ }
+ document.getElementById('outputFibo').textContent = res.join(", ");
+}
+ </pre>
+
+ <h2>sumDigits()</h2>
+ <pre>
+function sumDigits() {
+ let num = Math.abs(Number(document.getElementById('sumDigitsInput').value));
+ let sum = 0;
+ while (num > 0) {
+ sum += num % 10;
+ num = Math.floor(num / 10);
+ }
+ document.getElementById('outputSumDigits').textContent = sum;
+}
+ </pre>
+
+ <h2>reverseInteger()</h2>
+ <pre>
+function reverseInteger() {
+ let num = Number(document.getElementById('revIntInput').value);
+ let rev = 0, sign = num < 0 ? -1 : 1;
+ num = Math.abs(num);
+ while (num > 0) {
+ rev = rev * 10 + (num % 10);
+ num = Math.floor(num / 10);
+ }
+ document.getElementById('outputRevInt').textContent = sign * rev;
+}
+ </pre>
+
+ <h2>checkPrime()</h2>
+ <pre>
+function checkPrime() {
+ let num = Number(document.getElementById('primeInput').value);
+ if (num < 2) { document.getElementById('outputPrime').textContent = "Not prime"; return; }
+ for (let i = 2; i <= Math.sqrt(num); i++) {
+ if (num % i === 0) {
+  document.getElementById('outputPrime').textContent = "Not prime";
+  return;
+ }
+ }
+ document.getElementById('outputPrime').textContent = "Prime";
+}
+ </pre>
+
+ <h2>primesInRange()</h2>
+ <pre>
+function primesInRange() {
+ let start = Number(document.getElementById('rangePrimeStart').value);
+ let end = Number(document.getElementById('rangePrimeEnd').value);
+ if (start > end) [start, end] = [end, start];
+ let res = [];
+ for (let n = start; n <= end; n++) {
+ let isPrime = n > 1;
+ for (let i = 2; i <= Math.sqrt(n); i++) {
+  if (n % i === 0) {
+  isPrime = false;
+  break;
+  }
+ }
+ if (isPrime) res.push(n);
+ }
+ document.getElementById('outputRangePrimes').textContent = res.length ? res.join(", ") : "No primes found";
+}
+ </pre>
+
+ <h2>swapNumbers()</h2>
+ <pre>
+function swapNumbers() {
+ let a = Number(document.getElementById('swapA').value);
+ let b = Number(document.getElementById('swapB').value);
+ [a, b] = [b, a];
+ document.getElementById('outputSwap').textContent = `A: ${a}, B: ${b}`;
+}
+ </pre>
+
+ <h2>multiplicationTable()</h2>
+ <pre>
+function multiplicationTable() {
+ let num = Number(document.getElementById('multTableNum').value);
+ let t = [];
+ for (let i = 1; i <= 10; i++) t.push(`${num} x ${i} = ${num * i}`);
+ document.getElementById('outputMultTable').textContent = t.join("\n");
+}
+ </pre>
+
+ <h2>countDigitOccurrences()</h2>
+ <pre>
+function countDigitOccurrences() {
+ let num = Math.abs(Number(document.getElementById('countDigitNum').value)).toString();
+ let digit = document.getElementById('digitToCount').value;
+ let count = 0;
+ for (let ch of num) if (ch === digit) count++;
+ document.getElementById('outputCountDigit').textContent = count;
+}
+ </pre>
+
+ <h2>print1to100()</h2>
+ <pre>
+function print1to100() {
+ let res = [];
+ for (let i = 1; i <= 100; i++) res.push(i);
+ document.getElementById('output1to100').textContent = res.join(", ");
+}
+ </pre>
+
+ <h2>printOdds()</h2>
+ <pre>
+function printOdds() {
+ let res = [];
+ for (let i = 1; i <= 100; i++) if (i % 2 !== 0) res.push(i);
+ document.getElementById('outputOddsEvens').textContent = res.join(", ");
+}
+ </pre>
+
+ <h2>printEvens()</h2>
+ <pre>
+function printEvens() {
+ let res = [];
+ for (let i = 1; i <= 100; i++) if (i % 2 === 0) res.push(i);
+ document.getElementById('outputOddsEvens').textContent = res.join(", ");
+}
+ </pre>
+
+ <h2>multiplesOfNumber()</h2>
+ <pre>
+function multiplesOfNumber() {
+ let num = Number(document.getElementById('multN_Num').value);
+ let count = Number(document.getElementById('multN_Count').value);
+ let res = [];
+ for (let i = 1; i <= count; i++) res.push(num * i);
+ document.getElementById('outputMultiples').textContent = res.join(", ");
+}
+ </pre>
+
+ <h2>findPower()</h2>
+ <pre>
+function findPower() {
+ let base = Number(document.getElementById('powerBase').value);
+ let exp = Number(document.getElementById('powerExp').value);
+ document.getElementById('outputPower').textContent = Math.pow(base, exp);
+}
+ </pre>
+
+ <h2>findGCDLCM()</h2>
+ <pre>
+function findGCDLCM() {
+ let a = Number(document.getElementById('gcdA').value);
+ let b = Number(document.getElementById('gcdB').value);
+ if (!a || !b) { document.getElementById('outputGCDLCM').textContent = "Enter both numbers"; return; }
+ let gcd = (x, y) => {
+ while (y) [x, y] = [y, x % y];
+ return x;
+ };
+ let lcm = (x, y) => x * y / gcd(x, y);
+ document.getElementById('outputGCDLCM').textContent = `GCD: ${gcd(a, b)}, LCM: ${lcm(a, b)}`;
+}
+ </pre>
+ </section>
+</body>
+</html>
